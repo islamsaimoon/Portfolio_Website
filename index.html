@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saimoon Islam | Network Administrator</title>
+    <!-- external CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome & Google Fonts (remain in HTML because they are external resources) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- GSAP from CDN (used by script.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+</head>
+<body>
+    <!-- 3-Second Preloader -->
+    <div id="preloader">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="terminal-button close"></div>
+                    <div class="terminal-button minimize"></div>
+                    <div class="terminal-button maximize"></div>
+                </div>
+                <div class="terminal-title">terminal — bash — 80×24</div>
+            </div>
+            <div class="terminal-content">
+                <div class="terminal-line" id="terminal-line-1"></div>
+                <div class="terminal-line" id="terminal-line-2"></div>
+                <div class="terminal-line" id="terminal-line-3"></div>
+                <div class="terminal-line" id="terminal-line-4"></div>
+                <div class="terminal-line" id="terminal-line-5"></div>
+                <div class="terminal-line" id="terminal-line-6"></div>
+                <div class="terminal-line" id="terminal-line-7"></div>
+                <div class="terminal-line" id="terminal-line-8"></div>
+            </div>
+        </div>
+        <div class="terminal-progress">
+            <div>Loading portfolio interface...</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="#">SAIMOON</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-subtitle">Network & System Administrator</div>
+                <h1 class="hero-title">Saimoon Islam</h1>
+                
+                <!-- Typing Animation -->
+                <div class="typing-container">
+                    <span class="typing-text" id="typed-text"></span>
+                    <span class="cursor"></span>
+                </div>
+                
+                <p class="hero-description">
+                    Building secure, efficient networks with a proven track record of 100% success in large-scale deployments and critical security remediation.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#experience" class="btn">View Experience</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Network & System Administrator with hands-on expertise in enterprise networking and Windows Server infrastructure. Proven track record of 100% success in large-scale OS deployment (20+ systems) and critical security remediation.
+                    </p>
+                    <p>
+                        Adept at managing MikroTik and Cisco environments, Active Directory, and virtualization platforms like VMware and Hyper-V. Ready to deliver technical excellence and operational security as a Junior Network Engineer.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder for profile image (image from /images folder) -->
+                    <div style="background:url('images/about.png'); background-position:center;background-size: cover;background-repeat: no-repeat; height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(0,0,0,0.1);">
+                        <i class="fas fa-user" style="font-size: 4rem; color: var(--gray-light);"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Counter Section -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-box">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number" data-target="20">0</span>
+                    <span class="stat-label">Systems Deployed</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number" data-target="11">0</span>
+                    <span class="stat-label">PCs Secured</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number" data-target="15">0</span>
+                    <span class="stat-label">Technologies</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" style="background-color: var(--gray-very-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience</h2>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-date">Internship</span>
+                    <h3 class="experience-title">Network & System Administration</h3>
+                    <div class="experience-company">Bangladesh IT Institute, Mirpur-10, Dhaka</div>
+                </div>
+                <div class="experience-description">
+                    <p>Key achievements during my internship:</p>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Achieved 100% success rate in high-volume OS deployment for 20+ systems using WDS</li>
+                        <li>Successfully remediated critical Trojan virus infections across 11 laboratory PCs with zero data loss</li>
+                        <li>Configured MikroTik routers utilizing routing protocols (RIP, OSPF, EIGRP), DHCP, DNS, and inter-VLAN routing</li>
+                        <li>Administered Active Directory, Group Policy, File Sharing, and Print Servers in Windows 10/11 environment</li>
+                        <li>Managed Hyper-V and VMware hypervisors for virtual machine deployment and testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section with Background -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Technical Skills</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Networking</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-route skill-icon"></i><span>Routing (RIP, OSPF, EIGRP)</span></li>
+                        <li><i class="fas fa-wifi skill-icon"></i><span>DHCP, DNS Configuration</span></li>
+                        <li><i class="fas fa-sitemap skill-icon"></i><span>VLAN, Inter-VLAN Routing</span></li>
+                        <li><i class="fas fa-network-wired skill-icon"></i><span>LAN/WAN, TCP/IP</span></li>
+                        <li><i class="fas fa-search skill-icon"></i><span>Network Troubleshooting</span></li>
+                        <li><i class="fas fa-server skill-icon"></i><span>MikroTik & Cisco Configuration</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Windows Server</h3>
+                    <ul class="skill-list">
+                        <li><i class="fab fa-windows skill-icon"></i><span>Active Directory</span></li>
+                        <li><i class="fas fa-cogs skill-icon"></i><span>Group Policy</span></li>
+                        <li><i class="fas fa-desktop skill-icon"></i><span>Windows 10/11 Administration</span></li>
+                        <li><i class="fas fa-folder skill-icon"></i><span>File Sharing</span></li>
+                        <li><i class="fas fa-print skill-icon"></i><span>Print Server</span></li>
+                        <li><i class="fas fa-terminal skill-icon"></i><span>Powershell Scripting</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Virtualization & Security</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-cloud skill-icon"></i><span>Hyper-V</span></li>
+                        <li><i class="fas fa-database skill-icon"></i><span>VMware</span></li>
+                        <li><i class="fab fa-docker skill-icon"></i><span>Docker Container</span></li>
+                        <li><i class="fas fa-shield-alt skill-icon"></i><span>Firewall Configuration</span></li>
+                        <li><i class="fas fa-bug skill-icon"></i><span>Malware Removal</span></li>
+                        <li><i class="fas fa-lock skill-icon"></i><span>Network Security</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Linux & Cloud</h3>
+                    <ul class="skill-list">
+                        <li><i class="fab fa-linux skill-icon"></i><span>Red Hat Linux Administration</span></li>
+                        <li><i class="fab fa-microsoft skill-icon"></i><span>Azure Fundamentals</span></li>
+                        <li><i class="fas fa-cube skill-icon"></i><span>Virtual Box (Oracle)</span></li>
+                        <li><i class="fas fa-server skill-icon"></i><span>Proxmox</span></li>
+                        <li><i class="fas fa-hdd skill-icon"></i><span>Quota Management</span></li>
+                        <li><i class="fas fa-tasks skill-icon"></i><span>System Monitoring</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Web Technologies</h3>
+                    <ul class="skill-list">
+                        <li><i class="fab fa-html5 skill-icon"></i><span>HTML5</span></li>
+                        <li><i class="fab fa-css3-alt skill-icon"></i><span>CSS3</span></li>
+                        <li><i class="fab fa-js skill-icon"></i><span>JavaScript (Basic)</span></li>
+                        <li><i class="fas fa-server skill-icon"></i><span>Web Server Maintenance</span></li>
+                        <li><i class="fas fa-chart-line skill-icon"></i><span>Dashboard Customization</span></li>
+                        <li><i class="fas fa-code skill-icon"></i><span>Basic Web Development</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-tools skill-icon"></i><span>Windows Deployment Services</span></li>
+                        <li><i class="fas fa-clipboard-check skill-icon"></i><span>Technical Documentation</span></li>
+                        <li><i class="fas fa-users skill-icon"></i><span>Team Collaboration</span></li>
+                        <li><i class="fas fa-lightbulb skill-icon"></i><span>Problem Solving</span></li>
+                        <li><i class="fas fa-history skill-icon"></i><span>Adaptability</span></li>
+                        <li><i class="fas fa-comments skill-icon"></i><span>Communication</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Training Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education & Training</h2>
+            </div>
+            <div class="education-training-grid">
+                <div class="education-card">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <span class="card-date">06/2025 - Present</span>
+                    <h3>Diploma in Network Solutions & System Administration</h3>
+                    <span class="card-institution">IsDB-BISEW, IT Scholarship Programme</span>
+                    <p>Specialized training in enterprise networking, Windows Server infrastructure, and Active Directory management.</p>
+                </div>
+                
+                <div class="education-card">
+                    <div class="card-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <span class="card-date">2019 - 2023</span>
+                    <h3>Bachelor of Business Administration in Management</h3>
+                    <span class="card-institution">Dhaka College, Dhaka, Bangladesh</span>
+                    <p>CGPA: 2.88 (out of 4.00). Developed strong analytical and management skills.</p>
+                </div>
+                
+                <div class="training-card">
+                    <div class="card-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <span class="card-date">Completed</span>
+                    <h3>Networking Devices and Initial Configuration</h3>
+                    <span class="card-institution">Cisco Networking Academy (Online)</span>
+                    <p>Proficient in Cisco IOS, hierarchical network design, and implementing IPv4 subnetting schemes.</p>
+                </div>
+                
+                <div class="training-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <span class="card-date">Completed</span>
+                    <h3>Cloud Engineering (Basics)</h3>
+                    <span class="card-institution">Muktopaath (DIKKHA Project)</span>
+                    <p>Completed comprehensive training on cloud infrastructure through the DIKKHA project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section with Background -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Certifications</h2>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Networking Devices and Initial Configuration</h3>
+                    <span class="certification-org">Cisco Networking Academy (Online)</span>
+                    <p>Proficient in Cisco IOS, hierarchical network design, and implementing IPv4 subnetting schemes.</p>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Engineering (Basics)</h3>
+                    <span class="certification-org">Muktopaath (DIKKHA Project)</span>
+                    <p>Completed comprehensive training on cloud infrastructure through the DIKKHA project.</p>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Diploma in Network Solutions & System Administration</h3>
+                    <span class="certification-org">IsDB-BISEW IT Scholarship Programme</span>
+                    <p>Specialized training in enterprise networking, Windows Server infrastructure, and Active Directory management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>saimoon.islam12122@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>01739225924</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Mirpur-1, Dhaka 1216, Bangladesh</p>
+                        </div>
+                    </div>
+                    <div class="social-links" style="justify-content: flex-start; margin-top: 30px;">
+                        <a href="https://linkedin.com/in/saimoonislam" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/islamsaimoon" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="6" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="footer-logo">SAIMOON</a>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/saimoonislam" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/islamsaimoon" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright">© 2026 Saimoon Islam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- external JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
